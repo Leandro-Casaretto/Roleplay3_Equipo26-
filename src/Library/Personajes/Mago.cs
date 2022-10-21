@@ -22,3 +22,5 @@ namespace Library
             this.Defensa = defensa;
        
         }
+    }
+}

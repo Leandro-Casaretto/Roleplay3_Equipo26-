@@ -19,9 +19,12 @@ namespace Library
             this.Nombre = nombre;
             this.Vida = vida;
             this.Ataque = ataque;
-            this.Defensa = defensa;
-            
+            this.Defensa = defensa; 
         }
+    }
+}
+            
+        
         
         
         
