@@ -1,15 +1,21 @@
-namespace Library
+
+namespace RoleplayGame
 {
-    public class Hechizo
+    public class Hechizo: IObjeto
     {
-        public int Ataque {get; set;}
-        public int Defense {get; set;}
-
-        public Hechizo(int ataque, int defensa)
+        public int valorAtaque
         {
-            this.Ataque = ataque;
-            this.Defensa = defensa;
+            get
+            {
+                return 50;
+            }
         }
-
+        public int valorDefensa
+        {
+            get
+            {
+                return 30;
+            }
+        }
     }
 }

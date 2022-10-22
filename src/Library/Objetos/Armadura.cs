@@ -1,22 +1,20 @@
-
-namespace Library
+namespace RoleplayGame
 {
-    public class Armadura
+    public class Armadura: IObjeto
     {
-        public int valorDefensa
+        public int valorDefensa 
         {
             get
             {
                 return 20;
-            }
+            } 
         }
-    
         public int valorAtaque
         {
             get
             {
-                return 0;  /// La armadura no tiene daño de ataque
+                return 0; //La armadura no tiene daño de ataque 
             }
-    
+        }
     }
 }

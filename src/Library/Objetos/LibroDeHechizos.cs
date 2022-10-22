@@ -1,20 +1,23 @@
+using System.Collections.Generic;
 
 namespace RoleplayGame
 {
-    public class Martillo: IObjeto
+    public class LibroDeHechizos: IObjeto
     {
+        public Hechizo[] Hechizos {get; set;}
+        
         public int valorAtaque
         {
             get
             {
-                return 30;
+                return 50;
             } 
         }
         public int valorDefensa
         {
             get
             {
-                return 0;  
+                return 50;  
             }
         }
     }

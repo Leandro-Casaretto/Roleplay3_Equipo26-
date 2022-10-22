@@ -1,20 +1,20 @@
-
 namespace RoleplayGame
 {
-    public class Martillo: IObjeto
+    public class CascoDeOro: IObjeto
     {
+        public int valorDefensa 
+        {
+            get
+            {
+                return 10;
+            } 
+        }
+
         public int valorAtaque
         {
             get
             {
-                return 30;
-            } 
-        }
-        public int valorDefensa
-        {
-            get
-            {
-                return 0;  
+                return 0;
             }
         }
     }
