@@ -18,7 +18,7 @@ namespace RoleplayGame
 
         public BotasDeOro BotasDeOro {get; set;}
 
-       
+    
         private int vida = 100; //Establecemos la vida
 
         public int valorAtaque
@@ -28,8 +28,8 @@ namespace RoleplayGame
                 return ArcoPesado.valorAtaque;
             }
         }
-         
-          public int valorDefensa
+        
+        public int valorDefensa
         {
             get
             {
@@ -63,4 +63,4 @@ namespace RoleplayGame
     }
 }
     
-      
+    
