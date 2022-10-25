@@ -27,7 +27,7 @@ namespace RoleplayGame
                 return Armadura.valorDefensa;
             }
         }
-          public int valorAtaque
+        public int valorAtaque
         {
             get
             {
@@ -62,4 +62,4 @@ namespace RoleplayGame
     }
 }
     
-      
+

@@ -17,8 +17,7 @@ namespace RoleplayGame
         public CapaOscura CapaOscura {get; set;}
 
         public BaculoHelado BaculoHelado {get; set;}
-
-       
+        
         private int vida = 100; //Establecemos la vida
 
         public int valorAtaque
@@ -28,8 +27,8 @@ namespace RoleplayGame
                 return BaculoHelado.valorAtaque;
             }
         }
-         
-          public int valorDefensa
+        
+        public int valorDefensa
         {
             get
             {
@@ -64,4 +63,4 @@ namespace RoleplayGame
     }
 }
     
-      
+
