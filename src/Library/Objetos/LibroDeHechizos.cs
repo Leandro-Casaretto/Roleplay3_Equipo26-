@@ -10,15 +10,29 @@ namespace RoleplayGame
         {
             get
             {
-                return 50;
+                int valorLibro = 0;
+                foreach (Hechizo hechizo in this.Hechizos)
+                {
+                    valorLibro += hechizo.valorAtaque;  //En este bucle le asignamos el valor de los hechizos que esten en en libro.
+                }
+                return valorLibro;          
+            
             } 
         }
+
         public int valorDefensa
         {
             get
             {
-                return 50;  
+                int valorLibro = 0;
+                foreach (Hechizo hechizo in this.Hechizos)
+                {
+                    valorLibro += hechizo.valorDefensa;  
+                }
+                return valorLibro;
+        
             }
+
         }
     }
 }
