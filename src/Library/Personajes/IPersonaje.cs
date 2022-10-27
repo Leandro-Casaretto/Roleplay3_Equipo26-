@@ -10,6 +10,6 @@ namespace RoleplayGame
 
         void perderVida(IPersonaje atacante);
 
-        void recuperarVida();
+        void recuperarVida(IPersonaje actual);
     }
 }

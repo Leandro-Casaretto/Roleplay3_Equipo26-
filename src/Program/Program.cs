@@ -17,16 +17,16 @@ namespace Program
             jose.ArcoPesado = new ArcoPesado();
             jose.BotasDeOro = new BotasDeOro();
 
-            Console.WriteLine($"Jose tiene ❤️ {jose.Vida}");
-            Console.WriteLine($"Pedro ataca a Jose con ⚔️ {pedro.valorAtaque}");
+            Console.WriteLine($"Jose tiene {jose.Vida}");
+            Console.WriteLine($"Pedro ataca a Jose con {pedro.valorAtaque}");
 
             jose.perderVida(pedro);
 
-            Console.WriteLine($"Jose tiene ❤️ {jose.Vida}");
+            Console.WriteLine($"Jose tiene {jose.Vida}");
 
-            jose.recuperarVida();
+            jose.recuperarVida(jose);
 
-            Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
+            Console.WriteLine($"Jose tiene {jose.Vida}");
         }
     }
 }
