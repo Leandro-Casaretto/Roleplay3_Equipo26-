@@ -11,5 +11,33 @@ namespace RoleplayGame
         void perderVida(IPersonaje atacante);
 
         void recuperarVida(IPersonaje actual);
+    
+        int Vp {get; set;}
+        public int VP
+        {
+            get
+            {
+                return this.Vp;
+            }
+            set
+            {
+                this.Vp=value;
+            }
+        }
+
+        public void sumVp(int vpEnemigo)
+        {   
+            if(Vp_enemigo>5)
+            {
+                this.Curar();
+            }
+            this.VP=VP+Vp_enemigo;
+        }
+
+
+
+
+
+
     }
 }
