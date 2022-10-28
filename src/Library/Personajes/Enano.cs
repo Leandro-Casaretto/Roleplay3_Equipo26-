@@ -59,6 +59,11 @@ namespace RoleplayGame
         {
             this.Vida = 200;
         }
+
+        public int Vp
+   
+   
+   
     }
 }
     
