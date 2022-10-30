@@ -1,0 +1,84 @@
+using System.Collections.Generic;
+namespace RoleplayGame
+{
+    public abstract class Personaje
+    {
+        protected string nombre; /// protegido asi solamente el código de la misma clase puede acceder al tipo.
+
+        protected int vida = 100; /// protegido asi solamente el código de la misma clase puede acceder al tipo.
+
+        public string Nombre { get{return this.nombre;} }
+
+        public int Vida { get{return this.vida;}  }
+
+        protected List<IObjeto> listaObjeto;
+
+        public List<IObjeto> ListaObjeto
+        {
+            get
+            {
+                return this.listaObjeto;
+            }
+        
+        }
+
+        protected Personaje(string nombre)
+        {
+            this.nombre = nombre;
+            listaObjeto = new List<IObjeto>();
+
+        }
+
+        public void agregarElemento (IObjeto objeto) /// Agregamos este método en comparacion con roleplay 2
+        {
+            this.listaObjeto.Add(objeto);
+        }
+
+        public void quitarElemento(IObjeto objeto) /// Agregamos este método en comparacion con roleplay 2
+        {
+            this.listaObjeto.Remove(objeto);
+        }
+
+        public void recuperarVida()
+        {
+            this.vida = 100;
+        }
+
+        public void recibirAtaque(int poder)
+        {
+            if (this.valorDefensa < poder)
+            {
+                this.vida -= poder - this.valorDefensa;
+            }
+        }
+
+        public virtual int valorAtaque
+        {
+            get
+            {
+                int value = 0;  // iniucializamos en 0
+                foreach (IObjeto objeto in this.listaObjeto)
+                {
+                    if (objeto is IObjetoAtaque)
+                        value += (objeto as IObjetoAtaque).valorAtaque; 
+                }
+                return value;
+            }
+        }
+
+        public virtual int valorDefensa
+        {
+            get
+            {
+                int value = 0; //Inicializamos en 0
+                foreach (IObjeto objeto in this.listaObjeto)
+                {
+                    if (objeto is IObjetoDefensa)
+                        value += (objeto as IObjetoDefensa).valorDefensa; 
+                }
+                return value;
+            }
+        }     
+
+    }
+}

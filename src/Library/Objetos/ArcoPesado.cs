@@ -1,20 +1,13 @@
 namespace RoleplayGame
 {
-    public class ArcoPesado: IObjeto
+    public class ArcoPesado: IObjetoAtaque
     {
         public int valorAtaque 
         {
             get
             {
-                return 20;
+                return 10;
             } 
-        }
-        public int valorDefensa
-        {
-            get
-            {
-                return 0;
-            }
         }
     }
 }

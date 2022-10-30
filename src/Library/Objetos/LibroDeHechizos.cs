@@ -4,35 +4,43 @@ namespace RoleplayGame
 {
     public class LibroDeHechizos: IObjeto
     {
-        public Hechizo[] Hechizos {get; set;}
+        private List<IHechizo> hechizos = new List<IHechizo>();
         
         public int valorAtaque
         {
             get
             {
-                int valorLibro = 0;
-                foreach (Hechizo hechizo in this.Hechizos)
+                int value = 0;
+                foreach (IHechizo hechizo in this.hechizos)
                 {
-                    valorLibro += hechizo.valorAtaque;  //En este bucle le asignamos el valor de los hechizos que esten en en libro.
+                    value += hechizo.valorAtaque;
                 }
-                return valorLibro;          
-            
-            } 
+                return value;
+            }
         }
 
         public int valorDefensa
         {
             get
             {
-                int valorLibro = 0;
-                foreach (Hechizo hechizo in this.Hechizos)
-                {
-                    valorLibro += hechizo.valorDefensa;  
-                }
-                return valorLibro;
-        
-            }
+                int value = 0;
 
+                foreach (IHechizo hechizo in this.hechizos)
+                {
+                    value += hechizo.valorDefensa;
+                }
+                return value;
+            }
+        }
+
+        public void agregarHechizo(IHechizo hechizo)
+        {
+            this.hechizos.Add(hechizo);
+        }
+
+        public void quitarHechizo(IHechizo hechizo)
+        {
+            this.hechizos.Remove(hechizo);
         }
     }
 }

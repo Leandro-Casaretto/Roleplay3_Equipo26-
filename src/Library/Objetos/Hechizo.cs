@@ -1,7 +1,6 @@
-
 namespace RoleplayGame
 {
-    public class Hechizo: IObjeto  //A partir de esta clase es que vamos a poder crear distintos hechizos
+    public class Hechizo: IHechizo
     {
         public int valorAtaque
         {
@@ -10,11 +9,12 @@ namespace RoleplayGame
                 return 50;
             }
         }
+
         public int valorDefensa
         {
             get
             {
-                return 30;
+                return 50;
             }
         }
     }

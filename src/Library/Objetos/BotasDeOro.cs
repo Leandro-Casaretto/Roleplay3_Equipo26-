@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public class BotasDeOro: IObjeto
+    public class BotasDeOro: IObjetoDefensa
     {
         public int valorDefensa 
         {
@@ -8,13 +8,6 @@ namespace RoleplayGame
             {
                 return 5;
             } 
-        }
-        public int valorAtaque
-        {
-            get
-            {
-                return 0; 
-            }
         }
     }
 }

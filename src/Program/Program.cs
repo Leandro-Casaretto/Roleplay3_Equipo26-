@@ -8,25 +8,24 @@ namespace Program
         static void Main(string[] args)
         {
             LibroDeHechizos libro = new LibroDeHechizos();
-            libro.Hechizos = new Hechizo[]{ new Hechizo() };
+            libro.agregarHechizo(new Hechizo());
+            
 
             Mago pedro = new Mago("Pedro");
-            pedro.BaculoHelado = new BaculoHelado();
 
-            Elfo jose = new Elfo("Jose");
-            jose.ArcoPesado = new ArcoPesado();
-            jose.BotasDeOro = new BotasDeOro();
+            
+            Enano jose = new Enano("Jose");
 
-            Console.WriteLine($"Jose tiene {jose.Vida}");
-            Console.WriteLine($"Pedro ataca a Jose con {pedro.valorAtaque}");
+            Console.WriteLine($"Jose tiene ❤️ {jose.Vida}");
+            Console.WriteLine($"Pedro ataca a Jose con ⚔️ {pedro.valorAtaque}");
 
-            jose.perderVida(pedro);
+            jose.recibirAtaque(pedro.valorAtaque);
 
-            Console.WriteLine($"Jose tiene {jose.Vida}");
+            Console.WriteLine($"Gimli has ❤️ {jose.Vida}");
 
-            jose.recuperarVida(jose);
+            jose.recuperarVida();
 
-            Console.WriteLine($"Jose tiene {jose.Vida}");
+            Console.WriteLine($"Someone cured Gimli. Gimli now has ❤️ {jose.Vida}");
         }
     }
 }

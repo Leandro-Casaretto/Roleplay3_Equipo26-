@@ -1,46 +1,62 @@
-using System;
-using System.Collections.Generic;
 using NUnit.Framework;
 using RoleplayGame;
 
-
 namespace Test.Library
 {
+    [TestFixture]
     public class TestEnano
     {
-        [Test]
-        public void testNombre()
-        {
-            Enano TestNombre = new Enano("Test Nombre");
 
-            Assert.AreEqual(TestNombre.Nombre,"Test Nombre");
+        [Test]
+        public void AgregarElementoAtaque()
+        {
+            Enano Jose = new Enano("Jose"); 
+            Jose.agregarElemento(new ArcoPesado()); 
+
+            Assert.AreEqual(40, Jose.valorAtaque);
         }
 
         [Test]
-
-        public void ataqueEnano()
+        public void AgregarElementoDefensa()
         {
-            Enano TestAtaque = new Enano("Test Ataque");
-            IObjeto Martillo = new Martillo();
-    
-            int Ataque = Martillo.valorAtaque;
-            int ataqueReal = 30;
+            Enano Jose = new Enano("Jose"); 
+            Armadura armadura = new Armadura(); 
+            
+            Jose.agregarElemento(armadura);
+            
 
-            Assert.AreEqual(ataqueReal,Ataque);
+            Assert.AreEqual(30, Jose.valorDefensa);
         }
 
         [Test]
-
-        public void defensaEnano()
+        public void TestAtaque()
         {
-            Enano TestDefensa = new Enano("Test Defensa");
-            IObjeto Casco = new CascoDeOro();
+            Enano Jose = new Enano("Jose"); 
+            Elfo Pedro = new Elfo("Pedro"); 
 
-            int Defensa = Casco.valorDefensa;
-            int defensaReal = 10;
+            Pedro.recibirAtaque(Jose.valorAtaque);
 
-            Assert.AreEqual(defensaReal,Defensa);
+            Assert.AreEqual(20, Pedro.Vida);
         }
 
+        [Test]
+        public void TestCurar()
+        {
+            Enano Jose = new Enano("Jose"); 
+            Jose.recuperarVida();
+            Assert.AreEqual(100, Jose.Vida);
+        }
+
+        [Test]
+        public void RecibirAtaque()
+        {
+            Enano Jose = new Enano("Jose"); 
+
+            Elfo martin = new Elfo("Martin"); 
+            martin.agregarElemento(new ArcoPesado()); 
+
+            Jose.recibirAtaque(martin.valorAtaque);
+            Assert.AreEqual(60, Jose.Vida);
+        }
     }
 }

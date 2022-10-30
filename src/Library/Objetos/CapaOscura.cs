@@ -1,21 +1,13 @@
 namespace RoleplayGame
 {
-    public class CapaOscura: IObjeto
+    public class CapaOscura: IObjetoDefensa
     {
         public int valorDefensa 
         {
             get
             {
-                return 40;
+                return 25;
             } 
-        }
-
-        public int valorAtaque
-        {
-            get
-            {
-                return 0;
-            }
         }
     }
 }

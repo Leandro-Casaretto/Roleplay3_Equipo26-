@@ -1,46 +1,62 @@
-using System;
-using System.Collections.Generic;
 using NUnit.Framework;
 using RoleplayGame;
 
-
 namespace Test.Library
 {
+    [TestFixture]
     public class TestMago
     {
-        [Test]
-        public void testNombre()
-        {
-            Mago TestNombre = new Mago("Test Nombre");
 
-            Assert.AreEqual(TestNombre.Nombre,"Test Nombre");
+        [Test]
+        public void AgregarElementoAtaque()
+        {
+            Mago Matias = new Mago("Matias"); 
+            Matias.agregarElemento(new BaculoHelado()); 
+
+            Assert.AreEqual(40, Matias.valorAtaque);
         }
 
         [Test]
-
-        public void ataqueMago()
+        public void AgregarElementoDefensa()
         {
-            Mago TestAtaque = new Mago("Test Ataque");
-            IObjeto BaculoHelado = new BaculoHelado();
-    
-            int Ataque = BaculoHelado.valorAtaque;
-            int ataqueReal = 80;
+            Mago Matias = new Mago("Matias"); 
+            CapaOscura capaOscura = new CapaOscura(); 
+            
+            Matias.agregarElemento(capaOscura);
+            
 
-            Assert.AreEqual(ataqueReal,Ataque);
+            Assert.AreEqual(30, Matias.valorDefensa);
         }
 
         [Test]
-
-        public void defensaMago()
+        public void TestAtaque()
         {
-            Mago TestDefensa = new Mago("Test Defensa");
-            IObjeto CapaOscura = new CapaOscura();
+            Mago Matias = new Mago("Matias"); 
+            Elfo Pedro = new Elfo("Pedro"); 
 
-            int Defensa = CapaOscura.valorDefensa;
-            int defensaReal = 40;
+            Pedro.recibirAtaque(Matias.valorAtaque);
 
-            Assert.AreEqual(defensaReal,Defensa);
+            Assert.AreEqual(20, Pedro.Vida);
         }
 
+        [Test]
+        public void TestCurar()
+        {
+            Mago Matias = new Mago("Matias"); 
+            Matias.recuperarVida();
+            Assert.AreEqual(100, Matias.Vida);
+        }
+
+        [Test]
+        public void RecibirAtaque()
+        {
+            Mago Matias = new Mago("Matias"); 
+
+            Elfo martin = new Elfo("Martin"); 
+            martin.agregarElemento(new ArcoPesado()); 
+
+            Matias.recibirAtaque(martin.valorAtaque);
+            Assert.AreEqual(60, Matias.Vida);
+        }
     }
 }

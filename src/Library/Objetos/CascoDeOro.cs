@@ -1,6 +1,6 @@
 namespace RoleplayGame
 {
-    public class CascoDeOro: IObjeto
+    public class CascoDeOro : IObjetoDefensa
     {
         public int valorDefensa 
         {
@@ -8,14 +8,6 @@ namespace RoleplayGame
             {
                 return 10;
             } 
-        }
-
-        public int valorAtaque
-        {
-            get
-            {
-                return 0;
-            }
         }
     }
 }
