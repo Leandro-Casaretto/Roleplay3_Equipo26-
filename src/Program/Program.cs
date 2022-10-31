@@ -21,11 +21,11 @@ namespace Program
 
             jose.recibirAtaque(pedro.valorAtaque);
 
-            Console.WriteLine($"Gimli has ❤️ {jose.Vida}");
+            Console.WriteLine($"Jose has {jose.Vida}");
 
             jose.recuperarVida();
 
-            Console.WriteLine($"Someone cured Gimli. Gimli now has ❤️ {jose.Vida}");
+            Console.WriteLine($"{jose.Vida}");
         }
     }
 }
