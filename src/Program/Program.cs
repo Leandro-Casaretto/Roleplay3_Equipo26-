@@ -16,7 +16,7 @@ namespace Program
             
             Enano jose = new Enano("Jose");
 
-            Console.WriteLine($"Jose tiene ❤️ {jose.Vida}");
+            Console.WriteLine($"Jose tiene {jose.Vida}");
             Console.WriteLine($"Pedro ataca a Jose con ⚔️ {pedro.valorAtaque}");
 
             jose.recibirAtaque(pedro.valorAtaque);
